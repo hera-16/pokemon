@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポケモン図鑑</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ポケモン図鑑</h1>
+            <div class="filter-container">
+                <select id="typeFilter">
+                    <option value="">すべてのタイプ</option>
+                    <option value="normal">ノーマル</option>
+                    <option value="fire">ほのお</option>
+                    <option value="water">みず</option>
+                    <option value="electric">でんき</option>
+                    <option value="grass">くさ</option>
+                    <option value="ice">こおり</option>
+                    <option value="fighting">かくとう</option>
+                    <option value="poison">どく</option>
+                    <option value="ground">じめん</option>
+                    <option value="flying">ひこう</option>
+                    <option value="psychic">エスパー</option>
+                    <option value="bug">むし</option>
+                    <option value="rock">いわ</option>
+                    <option value="ghost">ゴースト</option>
+                    <option value="dragon">ドラゴン</option>
+                    <option value="dark">あく</option>
+                    <option value="steel">はがね</option>
+                    <option value="fairy">フェアリー</option>
+                </select>
+            </div>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="ポケモンの名前または番号を検索...">
+                <button id="searchBtn">検索</button>
+            </div>
+        </header>
+
+        <main>
+            <div id="loading" class="loading">読み込み中...</div>
+            <div id="pokemonGrid" class="pokemon-grid"></div>
+            <div id="loadMoreContainer" class="load-more-container">
+                <button id="loadMoreBtn">もっと読み込む</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- ポケモン詳細モーダル -->
+    <div id="pokemonModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="pokemonDetails" class="pokemon-details"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
