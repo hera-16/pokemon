@@ -111,7 +111,7 @@ function createPokemonCard(pokemon) {
              alt="${pokemon.name}" 
              onerror="this.src='${pokemon.sprites.front_default}'">
         <div class="pokemon-number">#${pokemon.id.toString().padStart(3, '0')}</div>
-        <div class="pokemon-name">${getPokemonNameInJapanese(pokemon.name)}</div>
+        <div class="pokemon-name">${getPokemonNameInJapanese(pokemon.name, pokemon.id)}</div>
         <div class="pokemon-types">${types}</div>
     `;
     
@@ -225,7 +225,7 @@ async function showPokemonDetails(pokemon) {
             <img src="${pokemon.sprites.other['official-artwork'].front_default || pokemon.sprites.front_default}" 
                  alt="${pokemon.name}"
                  onerror="this.src='${pokemon.sprites.front_default}'">
-            <h2>${getPokemonNameInJapanese(pokemon.name)}</h2>
+            <h2>${getPokemonNameInJapanese(pokemon.name, pokemon.id)}</h2>
             <div class="pokemon-number">#${pokemon.id.toString().padStart(3, '0')}</div>
             <div class="pokemon-types">${types}</div>
             
@@ -281,35 +281,7 @@ function showError(message) {
     }, 5000);
 }
 
-// 日本語名前の取得（簡単なマッピング）
-function getPokemonNameInJapanese(englishName) {
-    const nameMap = {
-        'bulbasaur': 'フシギダネ',
-        'ivysaur': 'フシギソウ',
-        'venusaur': 'フシギバナ',
-        'charmander': 'ヒトカゲ',
-        'charmeleon': 'リザード',
-        'charizard': 'リザードン',
-        'squirtle': 'ゼニガメ',
-        'wartortle': 'カメール',
-        'blastoise': 'カメックス',
-        'caterpie': 'キャタピー',
-        'metapod': 'トランセル',
-        'butterfree': 'バタフリー',
-        'weedle': 'ビードル',
-        'kakuna': 'コクーン',
-        'beedrill': 'スピアー',
-        'pidgey': 'ポッポ',
-        'pidgeotto': 'ピジョン',
-        'pidgeot': 'ピジョット',
-        'rattata': 'コラッタ',
-        'raticate': 'ラッタ',
-        'pikachu': 'ピカチュウ',
-        'raichu': 'ライチュウ'
-    };
-    
-    return nameMap[englishName] || englishName.charAt(0).toUpperCase() + englishName.slice(1);
-}
+// 日本語名前の取得は pokemon-names-jp.js から読み込み
 
 // タイプ名の日本語変換
 function getTypeNameInJapanese(englishType) {
