@@ -43,6 +43,11 @@ body {
     image-rendering: crisp-edges;
 }
 
+main{
+    width: 100%;
+    margin: 0 auto;
+}
+
 @keyframes pixelMove {
     0%, 100% { 
         background-position: 
@@ -132,7 +137,8 @@ header h1 {
 .pokemon-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    grid-auto-rows: minmax(280px, auto);
+    gap: 15px;
     margin-bottom: 30px;
 }
 
@@ -144,6 +150,10 @@ header h1 {
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .pokemon-card:hover {
@@ -155,7 +165,8 @@ header h1 {
     width: 150px;
     height: 150px;
     object-fit: contain;
-    margin-bottom: 15px;
+    margin: 0 auto 15px auto;
+    display: block;
 }
 
 .pokemon-number {
@@ -387,7 +398,8 @@ header h1 {
     
     .pokemon-grid {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 15px;
+        grid-auto-rows: minmax(220px, auto);
+        gap: 12px;
     }
     
     .modal-content {
@@ -412,7 +424,8 @@ header h1 {
     
     .pokemon-grid {
         grid-template-columns: 30% 30% 30%;
-        gap: 5%;
+        grid-auto-rows: minmax(110px, auto);
+        gap: 12px 2.5%;
         padding: 0 2.5%;
     }
     
@@ -423,7 +436,9 @@ header h1 {
     .pokemon-card img {
         width: 75px;
         height: 75px;
-        margin-bottom: 8px;
+        margin: 0 auto 8px auto;
+        display: block;
+        object-fit: contain;
     }
     
     .pokemon-number {
@@ -462,7 +477,8 @@ header h1 {
     
     .pokemon-grid {
         grid-template-columns: 31% 31% 31%;
-        gap: 3.5%;
+        grid-auto-rows: minmax(100px, auto);
+        gap: 10px 2%;
         padding: 0 1.75%;
     }
     
@@ -475,7 +491,9 @@ header h1 {
     .pokemon-card img {
         width: 65px;
         height: 65px;
-        margin-bottom: 6px;
+        margin: 0 auto 6px auto;
+        display: block;
+        object-fit: contain;
     }
     
     .pokemon-number {
@@ -513,7 +531,8 @@ header h1 {
     .pokemon-grid {
         display: grid;
         grid-template-columns: 32% 32% 32%;
-        gap: 2%;
+        grid-auto-rows: minmax(90px, auto);
+        gap: 8px 1%;
         padding: 0 1%;
         max-width: 100%;
         overflow: hidden;
@@ -533,23 +552,25 @@ header h1 {
     .pokemon-card img {
         width: 55px;
         height: 55px;
-        margin-bottom: 3px;
+        margin: 0 auto 2px auto;
+        display: block;
+        object-fit: contain;
     }
     
     .pokemon-number {
         font-size: 8px;
-        margin: 2px 0;
+        margin: 1px 0;
     }
     
     .pokemon-name {
         font-size: 0.7rem;
-        margin: 2px 0;
+        margin: 1px 0;
         line-height: 1.1;
     }
     
     .pokemon-types {
         gap: 1px;
-        margin: 2px 0;
+        margin: 1px 0;
     }
     
     .type-badge {
@@ -571,7 +592,8 @@ header h1 {
 @media (max-width: 390px) {
     .pokemon-grid {
         grid-template-columns: 33% 33% 33%;
-        gap: 0.5%;
+        grid-auto-rows: minmax(85px, auto);
+        gap: 6px 0.5%;
         padding: 0 0.25%;
     }
     
@@ -582,6 +604,9 @@ header h1 {
     .pokemon-card img {
         width: 50px;
         height: 50px;
+        margin: 0 auto 2px auto;
+        display: block;
+        object-fit: contain;
     }
     
     .pokemon-name {
